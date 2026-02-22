@@ -22,7 +22,7 @@ pipeline {
             steps {
                 sh '''
                 pm2 describe hotstar > /dev/null 2>&1 && pm2 delete hotstar || true
-                pm2 start server.js --name hotstar --update-env
+                pm2 start npm --name hotstar -- start
                 pm2 save
                 pm2 status
                 '''
