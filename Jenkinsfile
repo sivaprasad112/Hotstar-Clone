@@ -6,7 +6,7 @@ pipeline {
     }
 
     environment {
-        APP_NAME = "hotstar"
+        APP_NAME = "hotstar1"
         NODE_ENV = "production"
     }
 
@@ -21,8 +21,8 @@ pipeline {
         stage('Run with PM2') {
             steps {
                 sh '''
-                pm2 describe hotstar > /dev/null 2>&1 && pm2 delete hotstar || true
-                pm2 start npm --name hotstar -- start
+                pm2 describe hotstar1 > /dev/null 2>&1 && pm2 delete hotstar1 || true
+                pm2 start npm --name hotstar1 -- start
                 pm2 save
                 pm2 status
                 '''
