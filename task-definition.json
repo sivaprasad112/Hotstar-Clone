@@ -4,15 +4,16 @@
   "requiresCompatibilities": ["FARGATE"],
   "cpu": "256",
   "memory": "512",
-  "executionRoleArn": "ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::153402911367:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
-      "name": "hotstar-container",
+      "name": "hotstar-clone",
       "image": "<IMAGE>",
       "essential": true,
       "portMappings": [
         {
-          "containerPort": 80,
+          "containerPort": 3000,
+          "hostPort": 3000,
           "protocol": "tcp"
         }
       ]
